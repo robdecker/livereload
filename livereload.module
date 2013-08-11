@@ -11,7 +11,7 @@ function livereload_init() {
     $path .= check_plain(variable_get('livereload_host', parse_url($base_url, PHP_URL_HOST)));
     $path .= ':' . check_plain(variable_get('livereload_port', 35729));
     $path .= '/livereload.js?snipver=1';
-    drupal_add_js($path, 'external');
+    drupal_add_js($path, array('type' => 'external', 'weight' => 50));
   }
 }
 

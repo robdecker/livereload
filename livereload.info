@@ -1,0 +1,3 @@
+name = LiveReload
+description = Enables and enhances use of LiveReload during development.
+core = 7.x

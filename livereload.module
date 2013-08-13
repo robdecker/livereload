@@ -21,7 +21,7 @@ function livereload_init() {
  * Force CSS to be added with link tags, rather than @import.
  */
 function livereload_css_alter(&$css) {
-  if (user_access('use livereload') && variable_get('livereload_css', FALSE)) {
+  if (variable_get('livereload_css', FALSE)) {
     foreach ($css as $key => $value) {
       $css[$key]['preprocess'] = FALSE;
     }

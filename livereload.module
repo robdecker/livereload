@@ -6,25 +6,13 @@
 function livereload_init() {
   global $base_url;
 
-  if (user_access('use livereload') && variable_get('livereload_js', TRUE)) {
+  if (variable_get('livereload_js', TRUE)) {
     $path = 'http://';
     $path .= check_plain(variable_get('livereload_host', parse_url($base_url, PHP_URL_HOST)));
     $path .= ':' . check_plain(variable_get('livereload_port', 35729));
     $path .= '/livereload.js?snipver=1';
     drupal_add_js($path, array('type' => 'external', 'weight' => 50));
   }
-}
-
-/**
- * Implements hook_permission().
- */
-function livereload_permission() {
-  return array(
-    'use livereload' => array(
-      'title' => t('Use LiveReload'),
-      'description' => t('Adds the livereload.js if it is enabled.'),
-    ),
-  );
 }
 
 /**
